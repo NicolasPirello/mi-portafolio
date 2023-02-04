@@ -1,0 +1,539 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700;900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+#root {
+  background-color: #1d1d1d;
+  color: WHITE;
+}
+
+:root {
+  --mainColor: #29335c;
+  --mainColorLight: #5767aa;
+  --secondaryColor: #db2b39;
+  --textColor: white;
+  --lime: #c7db00;
+  --cilantro: #7aa802;
+  --lox: #f78b2d;
+  --toas: #e4b600;
+  --black: #000000;
+  --negro-pastel: rgb(20, 20, 20);
+  --blue-pastel: #4e89e5;
+  --green-pastel-btn: #77dd77;
+  --red-pastel-btn: #ff6961;
+  --gray-pastel: #cdcdcd;
+  --naranja-ligero: #fab273;
+  --naranja-oscuro: #e16d09;
+  --cilantro-saturado: #83bd00;
+  --cilantro-oscuro: #628602;
+  --azul: rgba(5, 5, 242, 0.7);
+  --blanco-original: #fbfcfc;
+  --email: #2420df;
+  --marron-original: #d5a16a;
+  --marron-original-desgastado: rgba(213, 161, 106, 0.5);
+  --naranja-transparante: rgba(255, 137, 20, 0.4);
+  --naranja-transparante-borde: rgba(255, 137, 20, 0.5);
+  --negro-intenso: #0a0a0a;
+  --whatsapp: #29df20;
+  --naranja: #f78b2d;
+  --tamanoFooter: 150px;
+  --navBar: 70px;
+  --paddingArribaFooter: 90px;
+  --tamanoImageError404: 300px;
+  --fucsia: #08fdd8;
+  --celeste: #08fdd8;
+  --celeste2: #08fdd8;
+  --fucsia2: #fd2155;
+}
+
+/**  -------------------- COMPONENTE NAVBAR -------------------- */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navBar);
+  padding: 0 2rem;
+  background-color: var(--negro-pastel);
+  color: var(--textColor);
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: var(--textColor);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--celeste);
+  transition: 0.5s;
+}
+
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  font-size: 1.8rem;
+}
+
+header .nav-btn {
+  visibility: visible;
+  opacity: 100;
+}
+
+header .responsive_nav {
+  transform: none;
+  z-index: 1;
+}
+
+nav .nav-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+nav a {
+  font-size: 1.5rem;
+}
+
+header nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--negro-pastel);
+  transition: 1s;
+  transform: translateY(-100vh);
+}
+
+.headerTitle {
+  font-size: 1.5em;
+}
+
+.header-logo-Container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo-Container div {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  line-height: 16px;
+  position: absolute;
+  left: 75px;
+  top: 22px;
+}
+
+.headerTitle__onePart {
+  color: #08fdd8;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.headerTitle__secondPart {
+  color: white;
+}
+
+.headerBtnOpen:hover {
+  color: var(--lox);
+  transition: 0.5s;
+}
+
+.headerBtnClose:hover {
+  color: rgb(231, 49, 49);
+  transition: 0.5s;
+}
+
+/**  -------------------- COMPONENTE FOOTER -------------------- */
+
+.contenedorPrincipal {
+  min-height: calc(99vh - var(--tamanoFooter) - var(--navBar));
+  z-index: 1;
+}
+
+.newFooter {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--tamanoFooter); /* Es el calculo del Footer, deberia ser una variable. */
+  background-color: var(--negro-pastel);
+}
+
+.newFooter__container {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  width: 90%;
+  margin: auto;
+  align-items: stretch;
+  max-height: var(--tamanoFooter);
+  /* overflow: hidden; Quizas BORRAR */
+  padding: 20px 0 20px;
+  max-width: 1000px;
+}
+
+.newFooter__desktop {
+  display: none;
+}
+
+.newFooter__box {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  column-gap: 15px;
+  justify-items: center;
+}
+
+.newFooter__container h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.newFooter__container p {
+  font-size: 10px;
+  padding: 7px 0;
+  color: var(--gray-pastel);
+}
+
+.newFooter__itemsBox {
+  padding-left: 7px;
+  border-left: solid 1px var(--celeste);
+}
+
+
+.newFooter__titleSpan {
+  color: var(--celeste);
+}
+
+/**  -------------------- ORDENAR -------------------- */
+
+.containerCenterWeb { /* Margen exterior rojo */
+  margin: 10px;
+}
+
+.NicolasTwo { /* Margen exterior azul */
+  margin: 10px;
+  padding: 15px; 
+}
+
+/**  -------------------- Componente HOME -------------------- */
+
+.homeGeneral{
+  margin: 10px 10px 0px 10px;
+}
+
+.homeGeneral .textInfo{
+  margin: 30px 0;
+}
+
+.homeContainer { /* Margen exterior azul */
+  margin: 10px;
+  padding: 15px; 
+  max-width: 1600px;
+  margin: auto;
+}
+
+.textoWeb{
+  color: var(--fucsia);
+  font-size: 28px;
+  padding: 10px 0 0 ;
+}
+
+.textoCambiante{
+  color: var(--fucsia);
+  font-size: 18px;
+  padding: 0 0 10px;
+}
+
+.homeParrafos{
+  margin: 10px 0;
+}
+
+.masInformacionTitle{
+  margin: 15px 0;
+}
+
+.homeCards{
+  margin-bottom: 20px;
+}
+
+.homeCards:hover{
+  /* box-shadow: 1px 0px 5px 1px rgba(253,33,85,0.49);
+  -webkit-box-shadow: 1px 0px 5px 1px rgba(253,33,85,0.49);
+  -moz-box-shadow: 1px 0px 5px 1px rgba(253,33,85,0.49); */
+
+  box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.49);
+  -webkit-box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.49);
+  -moz-box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.49);
+
+  transition: all .3s;
+}
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(53, 53, 53);
+  padding: 15px;
+  justify-content: space-between;
+
+}
+
+.card-content h3{
+  border-bottom: solid 1px var(--celeste);
+  padding: 0px 0 5px;
+}
+
+.card-content p{
+  padding: 10px 0 3px;
+}
+
+.card-link-info{
+  margin: 12px 0 0 0;
+  padding: 8px;
+  background-color: var(--fucsia);
+  text-align: center;
+  display: block;
+  color: black;
+}
+
+.homeSections{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 20px;
+}
+
+/**  -------------------- Componente PROYECT CARDS -------------------- */
+
+.card-link-info-proyects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.card-link-info-proyects button{
+  width: 100%;
+  height: 40px;
+  background-color: var(--celeste);
+  border: none;
+  cursor: pointer;
+}
+
+/**  -------------------- COMPONENTE SKILLS -------------------- */
+
+
+
+.skillsContainer {
+  display: inline-flex;
+  padding: 10px;
+  width: 100%;
+}
+
+.skillsContainer:hover {
+  box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.49);
+  -webkit-box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.49);
+  -moz-box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.49);
+  transition: all .5s;
+  background-color: rgb(53, 53, 53);
+}
+
+.skillsContainer p, .skillsContainer h3{
+  font-size: 16px;
+}
+
+
+.skillsContainer h3{
+  padding-right: 5px;
+  color: var(--celeste);
+}
+
+/**  -------------------- ANIMACION DE ESCRITURA -------------------- */
+
+.wrapper{
+  display: flex;
+  height: 50px;
+}
+
+.wrapper .texto-dinamico{
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+}
+
+.texto-dinamico li{
+  list-style: none;
+  color: var(--celeste);
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: pasaje 15s steps(3) infinite;
+}
+
+@keyframes pasaje {
+  100%{
+    top: -150px;
+  }
+}
+
+.texto-dinamico li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 50px;
+}
+
+.texto-dinamico li span::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #1d1d1d;
+  border-left: 2px solid white;
+  animation: tipeo 5s steps(31) infinite;
+}
+
+@keyframes tipeo {
+  40%, 60%{
+    left: calc(100% + 5px);
+  }
+  100%{
+    left: 0;
+  }
+}
+
+/* TODO ---------------------------------------- SEPARADOR DE QUERYS ---------------------------------------- */
+
+/* ! -------------------- QUERYY SELECTOR 480PX --------------------  */
+
+@media only screen and (min-width: 480px) {
+
+  /**  -------------------- COMPONENTE FOOTER -------------------- */
+
+  .newFooter__itemsBox {
+    border-left: solid 1px var(--celeste);
+  }
+
+  .newFooter__container h4 {
+    font-size: 16px;
+  }
+
+  .newFooter__container p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+
+  /**  -------------------- COMPONENTE HOME -------------------- */
+
+  .homeSections{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .homeCards{
+    margin: 0;
+    display: flex;
+    align-items: stretch;
+  }
+
+}
+
+/* ! -------------------- QUERYY SELECTOR 768PX --------------------  */
+
+@media only screen and (min-width: 768px) {
+
+  /**  -------------------- COMPONENTE HOME -------------------- */
+
+
+  /** -------------------- COMPONENTE NAVBAR -------------------- */
+
+  header .nav-btn {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 8px;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    transition: 1s;
+    /* border-radius: 5px; */
+    color: black;
+    background-color: var(--celeste);
+  }
+
+  .active {
+    color: black;
+    background-color: var(--celeste);
+  }
+
+  header nav {
+    position: relative;
+    top: initial;
+    left: initial;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: initial;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--negro-pastel);
+    transition: none;
+    transform: none;
+  }
+
+  /**  -------------------- COMPONENTE FOOTER -------------------- */
+
+  .newFooter__desktop {
+    display: block;
+  }
+
+  .newFooter__container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ! -------------------- QUERYY SELECTOR 992PX --------------------  */
+
+@media only screen and (min-width: 992px) {
+
+  /**  -------------------- COMPONENTE HOME -------------------- */
+
+  .homeSections{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+}
+
+/* ! -------------------- QUERYY SELECTOR 1200PX --------------------  */
+
+@media only screen and (min-width: 1200px) {
+
+}
+
