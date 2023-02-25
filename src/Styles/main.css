@@ -91,7 +91,7 @@ header .nav-btn {
 
 header .responsive_nav {
   transform: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 nav .nav-close-btn {
@@ -117,6 +117,7 @@ header nav {
   background-color: var(--negro-pastel);
   transition: 1s;
   transform: translateY(-100vh);
+  z-index: 0;
 }
 
 .headerTitle {
@@ -127,9 +128,18 @@ header nav {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
-.header-logo-Container div {
+.logo{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  bottom: -37px;
+  left: -10px;
+}
+
+.header-logo-Container div a {
   display: flex;
   flex-direction: column;
   font-size: 15px;
@@ -137,12 +147,17 @@ header nav {
   position: absolute;
   left: 75px;
   top: 22px;
+  text-decoration: none;
 }
 
 .headerTitle__onePart {
   color: #08fdd8;
   font-size: 55px;
   font-weight: bold;
+}
+
+.header-logo-Container a {
+  text-decoration: none;
 }
 
 .headerTitle__secondPart {
@@ -163,7 +178,7 @@ header nav {
 
 .contenedorPrincipal {
   min-height: calc(99vh - var(--tamanoFooter) - var(--navBar));
-  z-index: 1;
+  z-index: 2;
 }
 
 .newFooter {
@@ -188,12 +203,10 @@ header nav {
   max-width: 1000px;
 }
 
-.newFooter__desktop {
-  display: none;
-}
 
 .newFooter__box {
   display: grid;
+  display: none;
   grid-template-columns: 1.2fr 1fr 1fr;
   column-gap: 15px;
   justify-items: center;
@@ -203,12 +216,14 @@ header nav {
   font-size: 14px;
   margin-bottom: 8px;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .newFooter__container p {
-  font-size: 10px;
+  font-size: 14px;
   padding: 7px 0;
   color: var(--gray-pastel);
+  text-align: center;
 }
 
 .newFooter__itemsBox {
@@ -219,6 +234,14 @@ header nav {
 
 .newFooter__titleSpan {
   color: var(--celeste);
+}
+
+.newFooter__box h4 {
+  text-align: left;
+}
+
+.newFooter__box p {
+  text-align: left;
 }
 
 /**  -------------------- ORDENAR -------------------- */
@@ -310,12 +333,138 @@ header nav {
   text-align: center;
   display: block;
   color: black;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  font-size: 14px;
 }
 
 .homeSections{
   display: grid;
   grid-template-columns: 1fr;
   margin-bottom: 20px;
+}
+
+.card-link-info a {
+  text-decoration: none;
+}
+
+.card-content a {
+  text-decoration: none;
+}
+
+.card-content a{
+  position: relative;
+  overflow: hidden;
+}
+
+.card-content span{
+  position: relative;
+  z-index: 2;
+}
+
+.botonHome::after{
+  content: "";
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: calc(-100% - 80px);
+  border-bottom: 37px solid #16ebab ;
+  border-right: 37px solid transparent;
+  transition: .4s ease-in-out all;
+  overflow: hidden;
+}
+
+.botonHome:hover::after{
+  left: 0;
+}
+
+.card-link-info:hover {
+  color: black;
+}
+
+/*
+
+Opciones de Colores para el boton de mas Arriba:
+
+#FF5733 (rojo intenso)
+#FFC0CB (rosa pastel)
+#800080 (morado oscuro)
+#FFFFFF (blanco)
+#000000 (negro)
+#808080 (gris medio)
+#90EE90 (verde claro)
+#ADD8E6 (azul claro)
+#1E90FF (azul cielo)
+*/
+
+/* Redes Sociales */
+
+.redesSocialesContainer{
+  position: relative;
+  height: 60px;
+  margin: 30px auto auto;
+}
+
+.redesSocialesContainer ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 75px;
+  transform: translate(-50%, -50%);
+}
+
+.redesSocialesContainer ul li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.redesSocialesContainer ul li a {
+  position: relative; 
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 63px;
+  background: #333;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #666;
+  transition: .5s;
+}
+
+.redesSocialesContainer ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--celeste);
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+.redesSocialesContainer ul li a:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--celeste);
+}
+
+.redesSocialesContainer ul li a:hover {
+  color: var(--celeste);
+  box-shadow: 0 0 5px var(--celeste);
+  text-shadow: 0 0 5px var(--celeste);
+}
+
+.iconHome{
+  position: relative;
+  top: 5%;
+  left: 1%;
 }
 
 /**  -------------------- Componente PROYECT CARDS -------------------- */
@@ -333,11 +482,29 @@ header nav {
   background-color: var(--celeste);
   border: none;
   cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
 }
 
-/**  -------------------- COMPONENTE SKILLS -------------------- */
+.botonProyect::after{
+  content: "";
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: calc(-100% - 80px);
+  border-bottom: 40px solid #16ebab ;
+  border-right: 40px solid transparent;
+  transition: .4s ease-in-out all;
+  overflow: hidden;
+}
 
+.botonProyect:hover::after{
+  left: 0;
+}
 
+/**  -------------------- COMPONENTE SKILLS VIEJO -------------------- */
 
 .skillsContainer {
   display: inline-flex;
@@ -362,6 +529,139 @@ header nav {
   padding-right: 5px;
   color: var(--celeste);
 }
+
+/**  -------------------- COMPONENTE SKILLS NUEVO -------------------- */
+
+.skillsContainerNew{
+  margin: 10px;
+  padding: 20px;
+  background-color: rgb(53, 53, 53);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.skillLayaoutGrid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skillsContainerNew:hover {
+  box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.80);
+  -webkit-box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.80);
+  -moz-box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.80);
+  transition: all .35s;
+  background-color: rgb(53, 53, 53);
+  color: var(--celeste);
+}
+
+.image{
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.skillTituloContainer h3{
+  border-top: solid 1px var(--celeste);
+  text-align: center;
+  margin-top: 15px;
+  padding: 5px 0;
+  width: 240px;
+}
+
+.skillsContainerNew:hover img{
+  transition: all 0.65s;
+	transform: rotateY(360deg);
+}
+
+/**  -------------------- COMPONENTE CONTACTO -------------------- */
+
+.contactFormContainer { /* Margen exterior azul */
+  margin: 0 auto 40px;
+  padding: 25px; 
+  max-width: 800px;
+}
+
+.contactFormContainer{
+  background-color: rgb(53, 53, 53);
+}
+
+
+.contactFormContainer label {
+  display: block;
+  width: 100%;
+  margin: 5px 0px 10px;
+  color: white
+}
+
+.contactFormContainer input, .contactFormContainer textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+}
+
+.contactFormContainer textarea{
+  height: 80px;
+}
+
+.contactFormContainer input:focus, .contactFormContainer textarea:focus {
+  box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.50);
+  -webkit-box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.50);
+  -moz-box-shadow: 1px 0px 5px 1px rgba(8,253,216,0.50);
+  transition: all .3s;
+}
+
+.contactFormContainer input[type="submit"]{
+  background-color: var(--celeste);
+  border: none;
+  margin-top: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.contactText{
+  text-align: center;
+}
+
+.contactFormContainer div{
+  margin: 20px 0;
+}
+
+.contactFormContainer span{
+  background-color: rgb(53, 53, 53);
+  color: white;
+  padding: 0 10px 10px 10px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: solid 2px var(--celeste);
+}
+
+.enviadoConExito{
+  width: 261px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: var(--fucsia2); /*#4ba344*/
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+}
+
 
 /**  -------------------- ANIMACION DE ESCRITURA -------------------- */
 
@@ -436,9 +736,11 @@ header nav {
   }
 
   .newFooter__container p {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
+
+/* ! -------------------- QUERYY SELECTOR 520PX --------------------  */
 
 @media only screen and (min-width: 520px) {
 
@@ -506,16 +808,83 @@ header nav {
     transform: none;
   }
 
+  /* Animaciones a la Navbar */
+
+  .Nicolas a {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    margin: 4px;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  .Nicolas a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid var(--celeste);
+    border-bottom: 2px solid var(--celeste);
+    transform: scaleY(2);
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .Nicolas a:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--celeste);
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+  }
+  
+  .Nicolas a:hover {
+    color: black;
+  }
+  
+  .Nicolas a:hover:before {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .Nicolas a:hover:after {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
   /**  -------------------- COMPONENTE FOOTER -------------------- */
 
-  .newFooter__desktop {
-    display: block;
+  .newFooter__box {
+    display: grid;
   }
 
   .newFooter__container {
     grid-template-columns: 1fr 1fr;
   }
+
+  .newFooter__desktop h4 {
+    text-align: left;
+  }
+  
+  .newFooter__desktop p {
+    text-align: left;
+  }
+
 }
+
 
 /* ! -------------------- QUERYY SELECTOR 992PX --------------------  */
 

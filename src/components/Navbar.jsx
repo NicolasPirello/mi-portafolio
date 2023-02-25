@@ -2,6 +2,7 @@ import { FaBars, FaTimes } from "react-icons/fa"
 import { useRef } from "react"
 import "../Styles/main.css"
 import { Link, NavLink } from "react-router-dom"
+import logo from "../images/Logos/logo-solo-n.png"
 
 function Navbar () {
 
@@ -20,14 +21,14 @@ function Navbar () {
             <header className="headerTitle">
 
                 <div className="header-logo-Container">
-                    <span className="headerTitle__onePart">N</span>
-                    <div>
-                        <span className="headerTitle__secondPart">Nicolas Pirello</span>
-                        <span className="headerTitle__secondPart">Desarrollador Web Full Stack</span>
-                    </div>
+
+                    <Link to="/">
+                        <img className="logo" src={logo} alt="" />
+                    </Link>
+                    
                 </div>
 
-                <nav ref={navRef}>
+                <nav className="Nicolas" ref={navRef}>
 
                     <NavLink 
                         onClick={showNavbar} 
@@ -50,12 +51,12 @@ function Navbar () {
                         >Proyectos
                     </NavLink>
 
-                    <NavLink 
+                    {/*<NavLink 
                         onClick={showNavbar} 
                         to="/curriculum" 
                         className={ ({isActive}) => isActive ? "active" : "" }
                         >Curriculum
-                    </NavLink>
+                    </NavLink>*/}
 
                     <NavLink 
                         onClick={showNavbar} 
