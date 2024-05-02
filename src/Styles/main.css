@@ -1,10 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700;900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* <uniquifier>: Use a unique and descriptive class name 
+// <weight>: Use a value from 300 to 800 */
 
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.65;
 }
 
 #root {
@@ -312,9 +320,9 @@ header nav {
   display: flex;
   flex-direction: column;
   background-color: rgb(53, 53, 53);
-  padding: 15px;
+  padding: 25px;
   justify-content: space-between;
-
+  border-radius: 4px;
 }
 
 .card-content h3{
@@ -336,6 +344,7 @@ header nav {
   cursor: pointer;
   width: 100%;
   border: none;
+  border-radius: 3px;
   font-size: 14px;
 }
 
@@ -485,6 +494,7 @@ Opciones de Colores para el boton de mas Arriba:
   font-size: 14px;
   position: relative;
   z-index: 2;
+  border-radius: 4px;
 }
 
 .botonProyect::after{
