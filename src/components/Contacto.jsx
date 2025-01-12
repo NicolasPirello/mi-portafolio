@@ -34,14 +34,14 @@ const Contacto = () => {
 
         <div className="homeContainer">
 
-            <span className="homeTitle">Bienvenidos a la seccion:</span>
+            <span className="homeTitle">Bienvenidos a la sección:</span>
             <h1>Contacto</h1>
 
             <div className="wrapper">
                 <ul className="texto-dinamico">
                     <li><span>Si deseas comunicarte conmigo.</span></li>
                     <li><span>Te dejo este formulario de contacto.</span></li>
-                    <li><span>Respondere a la brevedad.</span></li>
+                    <li><span>Responderé a la brevedad.</span></li>
                 </ul>
             </div>
 
@@ -49,7 +49,7 @@ const Contacto = () => {
 
 
             <div className="textInfo">
-                <p className="contactText">En caso de que quieras comunicarte conmigo te dejo este formulario de contacto. Respondere a la brevedad.</p>
+                <p className="contactText">En caso de que quieras comunicarte conmigo te dejo este formulario de contacto. Responderé a la brevedad.</p>
             </div>
 
         <form className='contactFormContainer' ref={form} onSubmit={sendEmail}>
@@ -75,7 +75,7 @@ const Contacto = () => {
            
             { mensajeExito ?  (
                 
-                <p className='enviadoConExito'>Mensaje Enviado con Exito!</p>
+                <p className='enviadoConExito'>¡Mensaje Enviado con Éxito!</p>
             
             ) : ("") }
 

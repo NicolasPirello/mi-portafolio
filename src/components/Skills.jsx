@@ -1,25 +1,27 @@
 import SkillCardNew from "./SkillCardNew";
-import nodejs from "../images/node-js.jpg"
-import html from "../images/html.jpg"
-import css from "../images/css.jpg"
-import js from "../images/js.jpg"
-import express from "../images/express.jpg"
-import git from "../images/git.jpg"
-import sequelize from "../images/sequelize.jpg"
-import sqlServer from "../images/sql-server.jpg"
-import mysql from "../images/mysql.jpg"
-import scrum from "../images/scrum.jpg"
-import api from "../images/api.jpg"
-import postman from "../images/postman.jpg"
-import excel from "../images/excel.jpg"
-import wordpress from "../images/wordpress.jpg"
-import seo from "../images/seo.jpg"
-import powerbi from "../images/powerbi.jpg"
-import mvc from "../images/mvc.jpg"
-import reactRouter from "../images/react router.jpg"
-import reactHooks from "../images/reactHooks.jpg"
-import react from "../images/react.jpg"
-import emailJS from "../images/emailJS.jpg"
+import nodejs from "../images/Skills/node-js.webp"
+import html from "../images/Skills/html.webp"
+import css from "../images/Skills/css.webp"
+import js from "../images/Skills/js.webp"
+import express from "../images/Skills/express.webp"
+import git from "../images/Skills/git.webp"
+import sequelize from "../images/Skills/sequelize.webp"
+import sqlServer from "../images/Skills/sql-server.webp"
+import mysql from "../images/Skills/mysql.webp"
+import scrum from "../images/Skills/scrum.webp"
+import api from "../images/Skills/api.webp"
+import postman from "../images/Skills/postman.webp"
+import excel from "../images/Skills/excel.webp"
+import wordpress from "../images/Skills/wordpress.webp"
+import seo from "../images/Skills/seo.webp"
+import powerbi from "../images/Skills/powerbi.webp"
+import mvc from "../images/Skills/mvc.webp"
+import reactRouter from "../images/Skills/react router.webp"
+import reactHooks from "../images/Skills/reactHooks.webp"
+import react from "../images/Skills/react.webp"
+import emailJS from "../images/Skills/emailJS.webp"
+import woocommerce from "../images/Skills/woocommerce.webp"
+import tailwindcss from "../images/Skills/TailwindCSS.webp"
 
 
 
@@ -37,6 +39,12 @@ function Dashboard() {
             titulo: "CSS",
             descripcion: "FlexBox | Grid Layaout | Selectores | Efectos | Animaciones basicas | Querys | Variables",
             image: css
+        },
+        {
+            id: 22,
+            titulo: "Tailwind CSS",
+            descripcion: "FlexBox | Grid Layaout | Selectores | Efectos | Animaciones basicas | Querys | Variables",
+            image: tailwindcss
         },
         {
             id: 3,
@@ -135,6 +143,12 @@ function Dashboard() {
             image: wordpress
         },
         {
+            id: 13,
+            titulo: "WooCommerce",
+            descripcion: "Edicion de Temas | Paginas | Entradas | Categorias | Etiquetas | Uso de Plugins",
+            image: woocommerce
+        },
+        {
             id: 14,
             titulo: "SEO",
             descripcion: "Keyword Research | Arquitectura SEO | SEO OnPage | URL´s | Headings | Contenidos | Metadatos | Imagenes | Enlazado Interno | Sitemaps | Indexacion | Canibalizaciones | Mobile | Tiempos de Carga Web",
@@ -160,13 +174,13 @@ function Dashboard() {
             
             <div className="homeContainer">
 
-                <span className="homeTitle">Bienvenidos a la seccion:</span>
+                <span className="homeTitle">Bienvenidos a la sección:</span>
                 <h1>Mis Skills</h1>
 
                 <div className="wrapper">
                     <ul className="texto-dinamico">
-                        <li><span>Si estas interesado en mi</span></li>
-                        <li><span>Y queres conocer mis skills</span></li>
+                        <li><span>Si estás interesado en mí</span></li>
+                        <li><span>Y querés conocer mis skills</span></li>
                         <li><span>Este es el lugar correcto 😎</span></li>
                     </ul>
                 </div>
@@ -175,11 +189,11 @@ function Dashboard() {
 
                 <div className="textInfo">
 
-                    <p className="homeParrafos">No todos los Desarrolladores tenemos los mismos conocimientos, es por eso que creo importante que conocozcas que habilidades tengo y que herramientas conozco al dia de hoy. Aunque al ser una persona muy curiosa siempre estoy aprendiendo nuevas habilidades de desarrollo, asi que mantendre esta pagina lo mas actualizada posible.</p>
+                    <p className="homeParrafos">No todos los Desarrolladores tenemos los mismos conocimientos, es por eso que creo importante que conozcas qué habilidades tengo y que herramientas conozco al día de hoy. Aunque al ser una persona muy curiosa siempre estoy aprendiendo nuevas habilidades de desarrollo, así que mantendré esta página lo más actualizada posible.</p>
 
                 </div>
 
-                <h3 className="masInformacionTitle">Vamos a lo importante de esta seccion, estas son mis skills:</h3>
+                <h3 className="masInformacionTitle">Vamos a lo importante de esta sección, estas son mis skills:</h3>
 
                 <div className="skillLayaoutGrid">
 

@@ -3,6 +3,7 @@ import { useRef } from "react"
 import "../Styles/main.css"
 import { Link, NavLink } from "react-router-dom"
 import logo from "../images/Logos/logo-solo-n.png"
+import LogoNicolas from "../images/Logos/Logo Nicolas.png"
 
 function Navbar () {
 
@@ -24,6 +25,10 @@ function Navbar () {
 
                     <Link to="/">
                         <img className="logo" src={logo} alt="" />
+                    </Link>
+
+                    <Link to="/">
+                        <img className="logoNicolas" src={LogoNicolas} alt="" />
                     </Link>
                     
                 </div>
