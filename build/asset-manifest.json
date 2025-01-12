@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/mi-portafolio/build/static/css/main.3ca07c34.css",
+    "main.js": "/mi-portafolio/build/static/js/main.4ed6e80e.js",
+    "static/media/proximanova-regular.otf": "/mi-portafolio/build/static/media/proximanova-regular.7bc9ce404c297c24f210.otf",
+    "static/media/hero.jpg": "/mi-portafolio/build/static/media/hero.a7a063e8f9d179fbd72b.jpg",
+    "static/media/mysql.webp": "/mi-portafolio/build/static/media/mysql.4bbb4f63b43cfc8bd4c8.webp",
+    "static/media/reactHooks.webp": "/mi-portafolio/build/static/media/reactHooks.430cee26426f44f41136.webp",
+    "static/media/scrum.webp": "/mi-portafolio/build/static/media/scrum.243d1633656e32cedfaf.webp",
+    "static/media/wordpress.webp": "/mi-portafolio/build/static/media/wordpress.04f9b9d5d23a1da4256d.webp",
+    "static/media/mvc.webp": "/mi-portafolio/build/static/media/mvc.3b804c63bd5da07481d8.webp",
+    "static/media/react.webp": "/mi-portafolio/build/static/media/react.5efac609e6e65cec239e.webp",
+    "static/media/sql-server.webp": "/mi-portafolio/build/static/media/sql-server.3643a532828118c7d207.webp",
+    "static/media/logo-solo-n.png": "/mi-portafolio/build/static/media/logo-solo-n.9614215c699d5c96555c.png",
+    "static/media/sequelize.webp": "/mi-portafolio/build/static/media/sequelize.b2c2dcdaa66004bc0af6.webp",
+    "static/media/seo.webp": "/mi-portafolio/build/static/media/seo.95edd2e561b89bedb0e1.webp",
+    "static/media/postman.webp": "/mi-portafolio/build/static/media/postman.f9e8349d3b7919acd6b4.webp",
+    "static/media/git.webp": "/mi-portafolio/build/static/media/git.56ce2e52b5fdc4f2f71f.webp",
+    "static/media/TailwindCSS.webp": "/mi-portafolio/build/static/media/TailwindCSS.fc067fec95cfad67dd37.webp",
+    "static/media/react router.webp": "/mi-portafolio/build/static/media/react router.22758374457d88657bd2.webp",
+    "static/media/api.webp": "/mi-portafolio/build/static/media/api.17b85c980be7f68d5adc.webp",
+    "static/media/woocommerce.webp": "/mi-portafolio/build/static/media/woocommerce.d3f81b7d7ab519711f7a.webp",
+    "static/media/express.webp": "/mi-portafolio/build/static/media/express.ea597fad10404e0c2484.webp",
+    "static/media/node-js.webp": "/mi-portafolio/build/static/media/node-js.5346df01201870bfa869.webp",
+    "static/media/powerbi.webp": "/mi-portafolio/build/static/media/powerbi.ebbe0e2b029554cb05cd.webp",
+    "static/media/excel.webp": "/mi-portafolio/build/static/media/excel.c7fb64097e8addd8f665.webp",
+    "static/media/emailJS.webp": "/mi-portafolio/build/static/media/emailJS.e78b2fce323790e9b0f6.webp",
+    "static/media/css.webp": "/mi-portafolio/build/static/media/css.84c7a997cdcb6026596f.webp",
+    "static/media/html.webp": "/mi-portafolio/build/static/media/html.5e83eb955e4070931ea5.webp",
+    "static/media/js.webp": "/mi-portafolio/build/static/media/js.8bb37b268f69d3f5c559.webp",
+    "index.html": "/mi-portafolio/build/index.html",
+    "static/media/descargar.svg": "/mi-portafolio/build/static/media/descargar.b57a60b20bb9513579f4.svg",
+    "main.3ca07c34.css.map": "/mi-portafolio/build/static/css/main.3ca07c34.css.map",
+    "main.4ed6e80e.js.map": "/mi-portafolio/build/static/js/main.4ed6e80e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ca07c34.css",
+    "static/js/main.4ed6e80e.js"
+  ]
+}

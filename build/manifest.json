@@ -1,0 +1,26 @@
+{
+  "short_name": "Portafolio",
+  "name": "Portafonio Nicolas Alejandro Pirello | 2023",
+  "description": "Pagina web del Desarrollador Web Full Stack ©Nicolas Alejandro Pirello 2023 | React | JS | CSS | React Hooks | React Router DOM.",
+  "icons": [
+    {
+      "src": "./Logo.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type":"image/svg+xml"
+    },
+    {
+      "src": "../src/images/Logos/logo-solo-n.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "../src/images/Logos/logo-solo-n.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
