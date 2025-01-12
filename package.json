@@ -2,7 +2,7 @@
   "name": "porfatolio-nicolas-pirello",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://NicolasPirello.github.io/mi-portafolio",
+  "homepage": "http://NicolasPirello.github.io/mi-portafolio/build",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@testing-library/jest-dom": "^5.16.5",
