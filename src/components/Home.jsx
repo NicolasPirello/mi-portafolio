@@ -12,7 +12,7 @@ function Home () {
             <div className="homeContainer">
 
                 <span className="homeTitle">Bienvenidos a mi Web Personal</span>
-                <h1>Me llamo Nicolás Pirello y soy Desarrollador Web.</h1>
+                <h1>Me llamo Nicolás Pirello y soy Desarrollador Web</h1>
 
                 <div className="wrapper">
                     <ul className="texto-dinamico">
