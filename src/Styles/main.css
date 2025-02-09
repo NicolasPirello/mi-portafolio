@@ -59,7 +59,6 @@ p {
   /*background-image: url(../images/Fondos/Hola.webp);*/
   background-color: rgb(15 23 42/var(--tw-bg-opacity));
   background-image: url(../images/Fondos/hero.jpg);
-  
   z-index: 99999999;
 }
 
@@ -210,9 +209,9 @@ header nav {
 
 .logo{
   position: absolute;
-  width: 70px;
-  height: 70px;
-  bottom: -37px;
+  width: 50px;
+  height: 50px;
+  bottom: -27px;
   left: -10px;
 }
 
@@ -348,7 +347,7 @@ header nav {
 .homeGeneral{
   /*background-color: rgb(15 23 42/var(--tw-bg-opacity));
   background-image: url(../images/Fondos/hero.jpg);*/
-  background-image: url(../images/Fondos/descargar.svg);
+  background-image: url(../images/Fondos/patternn.svg);
   margin: 10px 10px 0px 10px;
 }
 
@@ -1087,3 +1086,4 @@ Opciones de Colores para el boton de mas Arriba:
   }
 
 }
+

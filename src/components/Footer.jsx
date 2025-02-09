@@ -14,7 +14,7 @@ function Footer () {
                         <span>PORTAFOLIO | </span>
                         <span className="newFooter__titleSpan">NICOLAS PIRELLO</span>
                     </h4>
-                    <p>Este es mi pagina web personal. Esta web esta <strong>Desarrollada en REACT</strong>. | ©Nicolas Alejandro Pirello | 2023 <strong></strong>.</p>
+                    <p>Este es mi pagina web personal. Esta web esta <strong>Desarrollada en REACT</strong>. | © Nicolas Alejandro Pirello | 2023 - 2025 <strong></strong>.</p>
                 </div>
 
                 <div className="newFooter__box">

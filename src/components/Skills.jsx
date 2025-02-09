@@ -174,7 +174,7 @@ function Dashboard() {
             
             <div className="homeContainer">
 
-                <span className="homeTitle">Bienvenidos a la sección:</span>
+                <span className="homeTitle">¡Bienvenido/a a la sección de Habilidades!</span>
                 <h1>Mis Skills</h1>
 
                 <div className="wrapper">
@@ -189,11 +189,11 @@ function Dashboard() {
 
                 <div className="textInfo">
 
-                    <p className="homeParrafos">No todos los Desarrolladores tenemos los mismos conocimientos, es por eso que creo importante que conozcas qué habilidades tengo y que herramientas conozco al día de hoy. Aunque al ser una persona muy curiosa siempre estoy aprendiendo nuevas habilidades de desarrollo, así que mantendré esta página lo más actualizada posible.</p>
+                    <p className="homeParrafos">¿Querés conocer mis habilidades y las herramientas que manejo hasta hoy? Estás en el lugar indicado. Los desarrolladores no siempre compartimos los mismos conocimientos, por eso considero importante mostrar qué domino actualmente y qué estoy aprendiendo. Soy una persona muy curiosa, así que sigo capacitándome y mantendré esta página lo más actualizada posible.</p>
 
                 </div>
 
-                <h3 className="masInformacionTitle">Vamos a lo importante de esta sección, estas son mis skills:</h3>
+                <h3 className="masInformacionTitle">Vamos a lo importante de esta sección:</h3>
 
                 <div className="skillLayaoutGrid">
 

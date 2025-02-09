@@ -173,12 +173,14 @@ function Proyectos () {
 
                 <div className="textInfo">
 
-                    <p className="homeParrafos">Desde que comencé a estudiar programación en Digital House me enamore de este mundo. Yo tenía conocimientos de SEO Web, pero siempre hice páginas en WordPress, conocer todo este abanico de herramientas que tiene el Desarrollo me asombro y fascino, es por eso que acá te voy a dejar mis proyectos desarrollados. Desde mi proyecto integrador hasta mis proyectos personales que voy haciendo.</p>
+                    <p className="homeParrafos">Desde que inicié mi formación en Digital House, me enamoré del mundo de la programación. Ya contaba con conocimientos en SEO y trabajaba con WordPress, pero descubrir este amplio abanico de herramientas de Desarrollo Web fue realmente fascinante.
+                    A continuación, comparto los proyectos que he desarrollado, desde mi proyecto integrador hasta creaciones personales en las que sigo trabajando.</p>
 
                 </div>
 
 
-                <h3 className="masInformacionTitle">Si querés revisar mis proyectos te los dejo acá, junto con mis trabajos realizados:</h3>
+                <h3 className="masInformacionTitle">¿Querés revisar mis proyectos?</h3>
+
 
                 <div>
 

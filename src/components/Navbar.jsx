@@ -2,7 +2,8 @@ import { FaBars, FaTimes } from "react-icons/fa"
 import { useRef } from "react"
 import "../Styles/main.css"
 import { Link, NavLink } from "react-router-dom"
-import logo from "../images/Logos/logo-solo-n.png"
+import logo from "../images/Logos/LogoNuevoNicolas.webp"
+/*import logo from "../images/Logos/logo-solo-n.png"*/
 import LogoNicolas from "../images/Logos/Logo Nicolas.png"
 
 function Navbar () {
