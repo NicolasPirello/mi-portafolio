@@ -1,95 +1,163 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import TextoDinamico from './TextoDinamico';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import '../Styles/main.css';
 
 const Contacto = () => {
-
-    const [ mensajeExito, setMensajeExito ] = useState(false)
-
+    const [mensajeExito, setMensajeExito] = useState(false);
+    const [error, setError] = useState(false);
     const form = useRef();
 
-    const sendEmail = (e) => {
+    const textosContacto = [
+        "¿Querés contactarme?",
+        "Completá el formulario",
+        "¡Te responderé pronto! 📧"
+    ];
 
-        e.preventDefault();
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
 
-        emailjs.sendForm('service_e1vki48', 'portafolio_template', form.current, 'dTcQqt0_DtamLAqt4')
-
-        .then((result) => {
-            console.log(result.text);
-            if (result.text == "OK"){
-                setMensajeExito(true)
-            } else {
-                setMensajeExito(false)
-            }
-        }, (error) => {
-            console.log(error.text);
+        const sections = document.querySelectorAll('.project-section');
+        sections.forEach((section) => {
+            observer.observe(section);
         });
 
-        e.target.reset()
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setError(false);
+        setMensajeExito(false);
+
+        emailjs.sendForm(
+            'service_e1vki48',
+            'portafolio_template',
+            form.current,
+            'dTcQqt0_DtamLAqt4'
+        )
+        .then((result) => {
+            console.log(result.text);
+            setMensajeExito(true);
+            form.current.reset();
+        })
+        .catch((error) => {
+            console.log(error.text);
+            setError(true);
+        });
     };
 
-  return (
+    return (
+        <div className="homeGeneral">
+            <div className="contact-container">
+                <div className="contact-header">
+                    <h1 className="contact-title">Contacto</h1>
+                    <TextoDinamico textos={textosContacto} />
+                </div>
 
-    <div className="homeGeneral">
+                <div className="project-section">
+                    <p className="projects-description">
+                        Como desarrollador Full Stack en el sector público, estoy siempre interesado en nuevos desafíos 
+                        y oportunidades de colaboración. Si tienes un proyecto en mente o quieres discutir posibles 
+                        colaboraciones, no dudes en contactarme.
+                    </p>
+                </div>
 
-        <div className="homeContainer">
+                <div className="contact-content">
+                    {/* Formulario de contacto */}
+                    <section className="contact-form-section">
+                        <h3>Envíame un mensaje</h3>
+                        <form className="contact-form" ref={form} onSubmit={sendEmail}>
+                            <div className="form-group">
+                                <label htmlFor="nombre">Nombre</label>
+                                <input 
+                                    type="text" 
+                                    id="nombre"
+                                    name="user_name" 
+                                    autoComplete="off" 
+                                    placeholder="Escribe tu nombre" 
+                                    required
+                                />
+                            </div>
 
-            <span className="homeTitle">Bienvenidos a la sección:</span>
-            <h1>Contacto</h1>
+                            <div className="form-group">
+                                <label htmlFor="email">Email</label>
+                                <input 
+                                    type="email" 
+                                    id="email"
+                                    name="user_email" 
+                                    placeholder="Escribe tu correo electrónico"
+                                    required
+                                />
+                            </div>
 
-            <div className="wrapper">
-                <ul className="texto-dinamico">
-                    <li><span>Si deseas comunicarte conmigo.</span></li>
-                    <li><span>Te dejo este formulario de contacto.</span></li>
-                    <li><span>Responderé a la brevedad.</span></li>
-                </ul>
+                            <div className="form-group">
+                                <label htmlFor="mensaje">Mensaje</label>
+                                <textarea 
+                                    id="mensaje"
+                                    name="message" 
+                                    placeholder="Escribe tu mensaje"
+                                    required
+                                />
+                            </div>
+
+                            <button type="submit" className="submit-btn">
+                                Enviar Mensaje
+                            </button>
+                            
+                            {mensajeExito && (
+                                <div className="mensaje-exito">
+                                    ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.
+                                </div>
+                            )}
+                            {error && (
+                                <div className="mensaje-error">
+                                    Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
+                                </div>
+                            )}
+                        </form>
+                    </section>
+
+                    {/* Mini footer con redes sociales */}
+                    <section className="contact-info-section">
+                        <h3>Conectemos</h3>
+                        <div className="social-links">
+                            <a 
+                                href="https://github.com/NicolasPirello" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="social-link"
+                            >
+                                <FaGithub /> GitHub
+                            </a>
+                            <a 
+                                href="https://www.linkedin.com/in/nicolas-pirello/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="social-link"
+                            >
+                                <FaLinkedin /> LinkedIn
+                            </a>
+                        </div>
+                    </section>
+                </div>
             </div>
-
-            <hr />
-
-
-            <div className="textInfo">
-                <p className="contactText">En caso de que quieras comunicarte conmigo te dejo este formulario de contacto. Responderé a la brevedad.</p>
-            </div>
-
-        <form className='contactFormContainer' ref={form} onSubmit={sendEmail}>
-
-            <span>Formulario de Contacto</span>
-
-            <div>
-                <label>Nombre</label>
-                <input type="text" name="from_name" autoComplete="off" placeholder='Escribe tu nombre' autoFocus/>
-            </div>
-
-            <div>
-                <label>Email</label>
-                <input type="email" name="user_email" placeholder='Escribe tu correo electronico'/>
-            </div>
-
-            <div>
-                <label>Mensaje</label>
-                <textarea name="message" placeholder='Escribe tu mensaje' />
-            </div>
-
-            <input type="submit" value="Enviar mensaje" />
-           
-            { mensajeExito ?  (
-                
-                <p className='enviadoConExito'>¡Mensaje Enviado con Éxito!</p>
-            
-            ) : ("") }
-
-
-            </form>
-
         </div>
-
-    </div>
-
-    
-
-  );
+    );
 };
 
-
-export default Contacto
+export default Contacto;

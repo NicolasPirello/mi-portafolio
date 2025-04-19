@@ -1,4 +1,6 @@
+import React, { useEffect } from 'react';
 import SkillCardNew from "./SkillCardNew";
+import TextoDinamico from "./TextoDinamico";
 import nodejs from "../images/Skills/node-js.webp"
 import html from "../images/Skills/html.webp"
 import css from "../images/Skills/css.webp"
@@ -23,11 +25,16 @@ import emailJS from "../images/Skills/emailJS.webp"
 import woocommerce from "../images/Skills/woocommerce.webp"
 import tailwindcss from "../images/Skills/TailwindCSS.webp"
 
+const Skills = () => {
+    const textosSkills = [
+        "Elijo herramientas por su valor, no por su moda.",
+        "Elijo lo simple cuando lo simple funciona.",
+        "Mi stack cambia, mi criterio permanece.",
+        "La mejor herramienta es la que resuelve el problema de forma clara.",
+        "Si una tecnología no resuelve un problema, no es la adecuada."
+    ];
 
-
-function Dashboard() {
-
-    let skills = [
+    const skills = [
         {
             id: 1,
             titulo: "HTML",
@@ -143,7 +150,7 @@ function Dashboard() {
             image: wordpress
         },
         {
-            id: 13,
+            id: 23,
             titulo: "WooCommerce",
             descripcion: "Edicion de Temas | Paginas | Entradas | Categorias | Etiquetas | Uso de Plugins",
             image: woocommerce
@@ -168,53 +175,102 @@ function Dashboard() {
         }
     ]
 
-    return (
-
-        <div className="homeGeneral">
-            
-            <div className="homeContainer">
-
-                <span className="homeTitle">¡Bienvenido/a a la sección de Habilidades!</span>
-                <h1>Mis Skills</h1>
-
-                <div className="wrapper">
-                    <ul className="texto-dinamico">
-                        <li><span>Si estás interesado en mí</span></li>
-                        <li><span>Y querés conocer mis skills</span></li>
-                        <li><span>Este es el lugar correcto 😎</span></li>
-                    </ul>
-                </div>
-
-                <hr />
-
-                <div className="textInfo">
-
-                    <p className="homeParrafos">¿Querés conocer mis habilidades y las herramientas que manejo hasta hoy? Estás en el lugar indicado. Los desarrolladores no siempre compartimos los mismos conocimientos, por eso considero importante mostrar qué domino actualmente y qué estoy aprendiendo. Soy una persona muy curiosa, así que sigo capacitándome y mantendré esta página lo más actualizada posible.</p>
-
-                </div>
-
-                <h3 className="masInformacionTitle">Vamos a lo importante de esta sección:</h3>
-
-                <div className="skillLayaoutGrid">
-
-                    {
-                        skills.map( element => {
-
-                        return ( <SkillCardNew key={element.id} skill={element} /> )
-
-                        })
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
+                });
+            },
+            { threshold: 0.1 }
+        );
 
+        const sections = document.querySelectorAll('.skill-section');
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
+
+    const skillCategories = {
+        frontend: skills.filter(skill => 
+            ['HTML', 'CSS', 'JavaScript', 'REACT', 'REACT Hooks', 'REACT Router', 'Tailwind CSS'].includes(skill.titulo)
+        ),
+        backend: skills.filter(skill => 
+            ['NodeJS', 'Express', 'Sequelize', 'SQLServer', 'MySQL'].includes(skill.titulo)
+        ),
+        herramientas: skills.filter(skill => 
+            ['Git', 'Postman', 'SCRUM', 'MVC', 'API´s'].includes(skill.titulo)
+        ),
+        adicionales: skills.filter(skill => 
+            ['Excel', 'Wordpress', 'WooCommerce', 'SEO', 'PowerBI', 'EmailJS'].includes(skill.titulo)
+        )
+    };
+
+    return (
+        <div className="homeGeneral">
+            <div className="skills-container">
+                <div className="skills-header">
+                    <h1 className="skills-title">Habilidades Técnicas</h1>
+                    <TextoDinamico textos={textosSkills} />
                 </div>
-                
 
-                
+                <div className="skill-section">
+                    <p className="skills-description">
+                        Como desarrollador Full Stack especializado en el sector público, domino un conjunto integral de tecnologías 
+                        y herramientas que me permiten crear soluciones robustas y escalables. Mi experiencia abarca desde el 
+                        desarrollo frontend hasta la implementación de sistemas backend complejos, siempre enfocado en mantener 
+                        los más altos estándares de calidad y seguridad.
+                    </p>
+                </div>
 
+                <div className="skills-content">
+                    <section className="skill-section">
+                        <h2 className="category-title">Frontend Development</h2>
+                        <div className="skills-grid">
+                            {skillCategories.frontend.map(element => (
+                                <SkillCardNew key={element.id} skill={element} />
+                            ))}
+                        </div>
+                    </section>
+
+                    <section className="skill-section">
+                        <h2 className="category-title">Backend Development</h2>
+                        <div className="skills-grid">
+                            {skillCategories.backend.map(element => (
+                                <SkillCardNew key={element.id} skill={element} />
+                            ))}
+                        </div>
+                    </section>
+
+                    <section className="skill-section">
+                        <h2 className="category-title">Herramientas de Desarrollo</h2>
+                        <div className="skills-grid">
+                            {skillCategories.herramientas.map(element => (
+                                <SkillCardNew key={element.id} skill={element} />
+                            ))}
+                        </div>
+                    </section>
+
+                    <section className="skill-section">
+                        <h2 className="category-title">Habilidades Adicionales</h2>
+                        <div className="skills-grid">
+                            {skillCategories.adicionales.map(element => (
+                                <SkillCardNew key={element.id} skill={element} />
+                            ))}
+                        </div>
+                    </section>
+                </div>
             </div>
-
         </div>
-
     );
 }
 
-export default Dashboard;
+export default Skills;

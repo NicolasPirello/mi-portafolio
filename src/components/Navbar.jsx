@@ -1,93 +1,82 @@
-import { FaBars, FaTimes } from "react-icons/fa"
-import { useRef } from "react"
-import "../Styles/main.css"
-import { Link, NavLink } from "react-router-dom"
-import logo from "../images/Logos/LogoNuevoNicolas.webp"
-/*import logo from "../images/Logos/logo-solo-n.png"*/
-import LogoNicolas from "../images/Logos/Logo Nicolas.png"
+import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
+import "../Styles/main.css";
 
-function Navbar () {
+function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    // Esto obtiene la barra de navegacion, es como un Document Selector
-    const navRef = useRef()
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    // Ahora creamos una funcion para eliminar o agregar una clase. Justamente a (navRef)
-    // (navRef.current) basicamente accede a la etiqueta nav, por eso lo llamamos asi antes de agregar la clase, sino solo es un objeto con muchas cosas.
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    const showNavbar = () => {
-        navRef.current.classList.toggle("responsive_nav")
-    }
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
-    return (
-        <>
-            <header className="headerTitle">
+  return (
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
+          <div className="logo-monogram"></div>
+          <div className="logo-text">
+            <span className="logo-name">Nicolás Pirello</span>
+            <span className="logo-title">Desarrollador Web</span>
+          </div>
+        </Link>
 
-                <div className="header-logo-Container">
+        <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
+          <NavLink 
+            to="/" 
+            onClick={closeMenu}
+            className={({isActive}) => isActive ? "nav-link active" : "nav-link"}
+          >
+            Inicio
+          </NavLink>
+          <NavLink 
+            to="/skills" 
+            onClick={closeMenu}
+            className={({isActive}) => isActive ? "nav-link active" : "nav-link"}
+          >
+            Skills
+          </NavLink>
+          <NavLink 
+            to="/proyectos" 
+            onClick={closeMenu}
+            className={({isActive}) => isActive ? "nav-link active" : "nav-link"}
+          >
+            Proyectos
+          </NavLink>
+          {/*<NavLink 
+            to="/curriculum" 
+            className={ ({isActive}) => isActive ? "active" : "" }
+          >Curriculum
+          </NavLink>*/}
+          <NavLink 
+            to="/contacto" 
+            onClick={closeMenu}
+            className={({isActive}) => isActive ? "nav-link active" : "nav-link"}
+          >
+            Contacto
+          </NavLink>
+        </div>
 
-                    <Link to="/">
-                        <img className="logo" src={logo} alt="" />
-                    </Link>
-
-                    <Link to="/">
-                        <img className="logoNicolas" src={LogoNicolas} alt="" />
-                    </Link>
-                    
-                </div>
-
-                <nav className="Nicolas" ref={navRef}>
-
-                    <NavLink 
-                        onClick={showNavbar} 
-                        to="/" 
-                        className={({isActive}) => isActive ? "active" : "" }
-                        >Inicio
-                    </NavLink>
-
-                    <NavLink 
-                        onClick={showNavbar} 
-                        to="/skills" 
-                        className={({isActive}) => isActive ? "active" : "" }
-                        >Skills
-                    </NavLink>
-
-                    <NavLink 
-                        onClick={showNavbar} 
-                        to="/proyectos" 
-                        className={ ({isActive}) => isActive ? "active" : "" }
-                        >Proyectos
-                    </NavLink>
-
-                    {/*<NavLink 
-                        onClick={showNavbar} 
-                        to="/curriculum" 
-                        className={ ({isActive}) => isActive ? "active" : "" }
-                        >Curriculum
-                    </NavLink>*/}
-
-                    <NavLink 
-                        onClick={showNavbar} 
-                        to="/contacto" 
-                        className={ ({isActive}) => isActive ? "active" : "" }
-                        >Contacto
-                    </NavLink>
-
-                    <button 
-                        onClick={showNavbar} 
-                        className="nav-btn nav-close-btn headerBtnClose">  {/* Lo ponemos en el boton con el fin de agregar o quitar la clase */}
-                        <FaTimes />
-                    </button>
-
-                </nav>
-
-                <button 
-                    onClick={showNavbar} 
-                    className="nav-btn headerBtnOpen"> {/* Lo ponemos en el boton con el fin de agregar o quitar la clase */}
-                    <FaBars />
-                </button>
-
-            </header>
-        </>
-    )
+        <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

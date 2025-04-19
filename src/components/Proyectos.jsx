@@ -1,31 +1,40 @@
+import React, { useEffect } from 'react';
 import ProyectCards from "./ProyectCards";
-
-
+import TextoDinamico from "./TextoDinamico";
 import nodejs from "../images/Skills/node-js.webp"
 import html from "../images/Skills/html.webp"
-import css from "../images/Skills/css.webp"
-import js from "../images/Skills/js.webp"
-import express from "../images/Skills/express.webp"
-import git from "../images/Skills/git.webp"
-import sequelize from "../images/Skills/sequelize.webp"
-import sqlServer from "../images/Skills/sql-server.webp"
-import mysql from "../images/Skills/mysql.webp"
-import scrum from "../images/Skills/scrum.webp"
-import api from "../images/Skills/api.webp"
-import postman from "../images/Skills/postman.webp"
-import excel from "../images/Skills/excel.webp"
-import wordpress from "../images/Skills/wordpress.webp"
-import seo from "../images/Skills/seo.webp"
-import powerbi from "../images/Skills/powerbi.webp"
-import mvc from "../images/Skills/mvc.webp"
-import reactRouter from "../images/Skills/react router.webp"
-import reactHooks from "../images/Skills/reactHooks.webp"
-import react from "../images/Skills/react.webp"
-import emailJS from "../images/Skills/emailJS.webp"
-import woocommerce from "../images/Skills/woocommerce.webp"
-import tailwindcss from "../images/Skills/TailwindCSS.webp"
 
-function Proyectos () {
+
+const Proyectos = () => {
+    const textosProyectos = [
+        "Probando, errando y aprendiendo... terminé haciendo esto.",
+        "Todo esto lo hice con tiempo, ganas y debug.",
+        "No hay soluciones genéricas, solo problemas bien entendidos.",
+    ];
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const sections = document.querySelectorAll('.project-section');
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
 
     const proyectos = 
         [
@@ -37,7 +46,8 @@ function Proyectos () {
                 repositorio: "https://github.com/NicolasPirello/MecafeG6-DH-Pirello",
                 deploy: "https://mecafeg6-dh-pirello-production.up.railway.app/",
                 repoName: "Repositorio",
-                deployName: "Deploy"
+                deployName: "Deploy",
+                seccion: "destacados"
             },
             {
                 id: 2,
@@ -47,7 +57,8 @@ function Proyectos () {
                 repositorio: "https://github.com/NicolasPirello/MecafeREACT-DH-Pirello",
                 deploy: "https://nicolaspirello.github.io/MecafeREACT-DH-Pirello/",
                 repoName: "Repositorio",
-                deployName: "Deploy"
+                deployName: "Deploy",
+                seccion: "destacados"
             },
             {
                 id: 3,
@@ -57,7 +68,8 @@ function Proyectos () {
                 repositorio: "https://github.com/NicolasPirello/react-cards-responsive",
                 deploy: "https://nicolaspirello.github.io/react-cards-responsive/",
                 repoName: "Repositorio",
-                deployName: "Deploy"
+                deployName: "Deploy",
+                seccion: "sitiosWeb"
             },
             {
                 id: 4,
@@ -67,7 +79,8 @@ function Proyectos () {
                 repositorio: "https://github.com/NicolasPirello/react-rick-and-morty",
                 deploy: "https://nicolaspirello.github.io/react-rick-and-morty/",
                 repoName: "Repositorio",
-                deployName: "Deploy"
+                deployName: "Deploy",
+                seccion: "sitiosWeb"
             },
             {
                 id: 5,
@@ -77,7 +90,8 @@ function Proyectos () {
                 repositorio: "https://github.com/NicolasPirello/app-task-react",
                 deploy: "https://nicolaspirello.github.io/app-task-react/",
                 repoName: "Repositorio",
-                deployName: "Deploy"
+                deployName: "Deploy",
+                seccion: "aplicacionesWeb"
             },
             {
                 id: 6,
@@ -87,7 +101,8 @@ function Proyectos () {
                 repositorio: "https://github.com/NicolasPirello/app-movies-list-react",
                 deploy: "https://nicolaspirello.github.io/app-movies-list-react/",
                 repoName: "Repositorio",
-                deployName: "Deploy"
+                deployName: "Deploy",
+                seccion: "aplicacionesWeb"
             },
             {
                 id: 7,
@@ -95,117 +110,113 @@ function Proyectos () {
                 descripcion: "Este es mi portafolio, en el que estás actualmente navegando, pero también forma parte de mis proyectos, ya que lo realice con REACT y estoy mejorándolo constantemente.",
                 tecnologias: [nodejs],
                 repositorio: "https://nicolaspirello.com/#/proyectos",
-                deploy: "https://nicolaspirello.com/",
+                deploy: "https://portafolio.nicolaspirello.com/",
                 repoName: "Privado",
-                deployName: "Ir a la Web"
+                deployName: "Ir a la Web",
+                seccion: "destacados"
             },
             {
-                id: 7,
-                titulo: "Nudo de Brujas (Wordpress) | Trabajo",
+                id: 8,
+                titulo: "ExpertoTarot (Wordpress) | Trabajo",
                 descripcion: "Hecha con base en un Keyword Research para posicionar en Google. Enfocada a Mobile. Con palabras claves posicionadas en las primeras posiciones de Google. Monitoreada con Search Console y Google Analytics.",
                 tecnologias: [nodejs],
                 repositorio: "https://nicolaspirello.com/#/proyectos",
-                deploy: "https://nudodebruja.es/",
+                deploy: "https://expertotarot.com/",
                 repoName: "S/Repositorio",
-                deployName: "Ir a la Web"
+                deployName: "Ir a la Web",
+                seccion: "destacados"
             },
             {
-                id: 7,
+                id: 9,
                 titulo: "Landing Page | React y Tailwind CSS",
                 descripcion: "Primera web estilizada con el Framwork de Tailwind CSS. Desarrollada con REACT (Create react app) y con su deploy en GitHub con gh-pages.",
                 tecnologias: [nodejs],
                 repositorio: "https://github.com/NicolasPirello/landing-page-react-tailwind-css",
                 deploy: "https://nicolaspirello.github.io/landing-page-react-tailwind-css/",
                 repoName: "Repositorio",
-                deployName: "Deploy"
+                deployName: "Deploy",
+                seccion: "sitiosWeb"
             }
             ,
             {
-                id: 7,
+                id: 10,
                 titulo: "Firefox Page | Tailwind CSS",
                 descripcion: "Landing Page de Firefox con Tailwind CSS. 100% Responsive, con opción de pasar de modo Claro a Oscuro y queda guardado en la Session.",
                 tecnologias: [nodejs],
                 repositorio: "https://github.com/NicolasPirello/firefox-tailwind",
                 deploy: "https://nicolaspirello.github.io/firefox-tailwind/",
                 repoName: "Repositorio",
-                deployName: "Deploy"
+                deployName: "Deploy",
+                seccion: "sitiosWeb"
             },
             {
-                id: 8,
-                titulo: "Tienda Kasaka Anime | Trabajo Cliente",
-                descripcion: "Realizada con WordPress y WooCommerce con pasarela de pago. SEO Optimizada, con su Blog y Contacto. Imágenes optimizadas WebP. Totalmente Responsiva.",
-                tecnologias: [nodejs],
-                repositorio: "#/proyectos",
-                deploy: "https://kasakanime.com",
-                repoName: "S/Repositorio",
-                deployName: "Ir a la Web"
-            },
-            {
-                id: 9,
+                id: 11,
                 titulo: "VegeBox | Practica Laboral",
                 descripcion: "Pagina Responsive realizada con HTML, CSS y JS. Formulario de contacto con email de confirmacion a quien lo envia. Card de compartir personalizada. Imagenes WebP",
                 tecnologias: [nodejs],
                 repositorio: "https://github.com/NicolasPirello/VegeBox-Entrevista-Tecnica",
                 deploy: "https://pruebatecnica.online/",
                 repoName: "Repositorio",
-                deployName: "Ir a la Web"
+                deployName: "Ir a la Web",
+                seccion: "sitiosWeb"
             }
         ]
 
-    return(
+    // Categorizar proyectos
+    const proyectosCategorizados = {
+        destacados: proyectos.filter(p => p.seccion === "destacados"),
+        aplicacionesWeb: proyectos.filter(p => p.seccion === "aplicacionesWeb"),
+        sitiosWeb: proyectos.filter(p => p.seccion === "sitiosWeb")
+    };
 
+    return (
         <div className="homeGeneral">
-            
-            <div className="homeContainer">
-
-                <span className="homeTitle">Bienvenidos a la sección:</span>
-                <h1>Mis Proyectos Web</h1>
-
-                <div className="wrapper">
-                    <ul className="texto-dinamico">
-                        <li><span>Estos son mis Proyectos Web</span></li>
-                        <li><span>Espero sean de tu agrado</span></li>
-                        <li><span>Y disfrutes tu permanencia aquí 😊</span></li>
-                    </ul>
+            <div className="projects-container">
+                <div className="projects-header">
+                    <h1 className="projects-title">Portafolio de Proyectos</h1>
+                        <TextoDinamico textos={textosProyectos} />
                 </div>
 
-                <hr />
-
-                <div className="textInfo">
-
-                    <p className="homeParrafos">Desde que inicié mi formación en Digital House, me enamoré del mundo de la programación. Ya contaba con conocimientos en SEO y trabajaba con WordPress, pero descubrir este amplio abanico de herramientas de Desarrollo Web fue realmente fascinante.
-                    A continuación, comparto los proyectos que he desarrollado, desde mi proyecto integrador hasta creaciones personales en las que sigo trabajando.</p>
-
+                <div className="project-section">
+                    <p className="projects-description">
+                        Desde mi formación en Digital House y mi experiencia en el sector público, 
+                        he desarrollado diversos proyectos que demuestran mi evolución como desarrollador Full Stack. 
+                        Mi trabajo abarca desde aplicaciones web completas hasta soluciones específicas, 
+                        siempre enfocado en crear productos de alta calidad y excelente experiencia de usuario.
+                    </p>
                 </div>
 
-
-                <h3 className="masInformacionTitle">¿Querés revisar mis proyectos?</h3>
-
-
-                <div>
-
-                    <section className="proyectSection">
-
-                        { proyectos.map ( elemento => {
-
-                            return (
-                                <ProyectCards 
-                                    key={elemento.id} 
-                                    proyecto={elemento}
-                                />
-                            )
-                        })}
-
+                <div className="projects-content">
+                    <section className="project-section">
+                        <h2 className="category-title">Proyectos Destacados</h2>
+                        <div className="projects-grid">
+                            {proyectosCategorizados.destacados.map(proyecto => (
+                                <ProyectCards key={proyecto.id} proyecto={proyecto} />
+                            ))}
+                        </div>
                     </section>
 
+                    <section className="project-section">
+                        <h2 className="category-title">Aplicaciones Web</h2>
+                        <div className="projects-grid">
+                            {proyectosCategorizados.aplicacionesWeb.map(proyecto => (
+                                <ProyectCards key={proyecto.id} proyecto={proyecto} />
+                            ))}
+                        </div>
+                    </section>
+
+                    <section className="project-section">
+                        <h2 className="category-title">Sitios Web y Landing Pages</h2>
+                        <div className="projects-grid">
+                            {proyectosCategorizados.sitiosWeb.map(proyecto => (
+                                <ProyectCards key={proyecto.id} proyecto={proyecto} />
+                            ))}
+                        </div>
+                    </section>
                 </div>
-
             </div>
-
-         </div>
-
-    )
-
+        </div>
+    );
 }
 
 export default Proyectos;

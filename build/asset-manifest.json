@@ -1,10 +1,8 @@
 {
   "files": {
-    "main.css": "./static/css/main.aa3b3046.css",
-    "main.js": "./static/js/main.5d190ddb.js",
-    "static/media/LogoNuevoNicolas.webp": "./static/media/LogoNuevoNicolas.13c8dc03abc1285b972a.webp",
+    "main.css": "./static/css/main.09681dda.css",
+    "main.js": "./static/js/main.df7207bd.js",
     "static/media/proximanova-regular.otf": "./static/media/proximanova-regular.7bc9ce404c297c24f210.otf",
-    "static/media/hero.jpg": "./static/media/hero.a7a063e8f9d179fbd72b.jpg",
     "static/media/mysql.webp": "./static/media/mysql.4bbb4f63b43cfc8bd4c8.webp",
     "static/media/reactHooks.webp": "./static/media/reactHooks.430cee26426f44f41136.webp",
     "static/media/scrum.webp": "./static/media/scrum.243d1633656e32cedfaf.webp",
@@ -28,13 +26,12 @@
     "static/media/css.webp": "./static/media/css.84c7a997cdcb6026596f.webp",
     "static/media/html.webp": "./static/media/html.5e83eb955e4070931ea5.webp",
     "static/media/js.webp": "./static/media/js.8bb37b268f69d3f5c559.webp",
-    "static/media/patternn.svg": "./static/media/patternn.d15fc2062a091d19165f.svg",
     "index.html": "./index.html",
-    "main.aa3b3046.css.map": "./static/css/main.aa3b3046.css.map",
-    "main.5d190ddb.js.map": "./static/js/main.5d190ddb.js.map"
+    "main.09681dda.css.map": "./static/css/main.09681dda.css.map",
+    "main.df7207bd.js.map": "./static/js/main.df7207bd.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa3b3046.css",
-    "static/js/main.5d190ddb.js"
+    "static/css/main.09681dda.css",
+    "static/js/main.df7207bd.js"
   ]
 }
