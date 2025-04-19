@@ -224,10 +224,7 @@ const Skills = () => {
 
                 <div className="skill-section">
                     <p className="skills-description">
-                        Como desarrollador Full Stack especializado en el sector público, domino un conjunto integral de tecnologías 
-                        y herramientas que me permiten crear soluciones robustas y escalables. Mi experiencia abarca desde el 
-                        desarrollo frontend hasta la implementación de sistemas backend complejos, siempre enfocado en mantener 
-                        los más altos estándares de calidad y seguridad.
+                        Como desarrollador, domino un conjunto integral de tecnologías y herramientas que me permiten crear soluciones robustas y escalables. Mi experiencia abarca desde el desarrollo frontend hasta la implementación de sistemas backend, siempre enfocado en mantener estándares de calidad y seguridad conjuntamente con la mejor experiencia que le pueda brindar al Usuario, quien es el que consume el servicio desarrollado.
                     </p>
                 </div>
 

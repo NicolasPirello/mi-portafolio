@@ -71,9 +71,8 @@ const Contacto = () => {
 
                 <div className="project-section">
                     <p className="projects-description">
-                        Como desarrollador Full Stack en el sector público, estoy siempre interesado en nuevos desafíos 
-                        y oportunidades de colaboración. Si tienes un proyecto en mente o quieres discutir posibles 
-                        colaboraciones, no dudes en contactarme.
+                        Como desarrollador, estoy siempre interesado en nuevos desafíos 
+                        y oportunidades de crecimiento. Si queres contactarme, no dudes rellenar el formulario.
                     </p>
                 </div>
 
