@@ -170,7 +170,7 @@ const Home = () => {
                                 <h3>Trayectoria Profesional</h3>
                                 <p>Conoce mi experiencia en el desarrollo web y mi trayectoria 
                                 profesional en el sector tecnológico.</p>
-                                <Link to="https://drive.google.com/file/d/18b2L_2isa60mToZrHfixFg6V1HtoGwfG/view?usp=sharing" target="_blank" className="section-link">
+                                <Link to="https://drive.google.com/file/d/18b2L_2isa60mToZrHfixFg6V1HtoGwfG/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="section-link">
                                     Ver CV
                                     <svg className="arrow-icon" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"/>

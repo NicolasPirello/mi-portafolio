@@ -9,13 +9,13 @@ const RedesSociales = () => {
         <ul>
 
             <li>
-                <a href="https://github.com/NicolasPirello" target="_blank">
+                <a href="https://github.com/NicolasPirello" target="_blank" rel="noopener noreferrer">
                     <VscGithub className="iconHome"/>
                 </a>
             </li>
 
             <li>
-                <a href="https://www.linkedin.com/in/nicolas-pirello" target="_blank">
+                <a href="https://www.linkedin.com/in/nicolas-pirello" target="_blank" rel="noopener noreferrer">
                     <FaLinkedinIn className="iconHome"/>    
                 </a>
             </li>
