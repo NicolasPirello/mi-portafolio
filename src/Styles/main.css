@@ -300,6 +300,7 @@ p {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease forwards 0.2s;
+  text-align: center;
 }
 
 .textoCambiante {
@@ -626,6 +627,43 @@ p {
 
   .section-text p {
     font-size: 1rem;
+  }
+
+  .particles {
+    animation: none;
+    opacity: 0.15;
+  }
+  
+  .svg-background {
+    animation: none;
+    transform: none;
+  }
+
+  /* Centrar todos los textos en móviles */
+  p, h1, h2, h3, h4, h5, h6, .section-text, .card-content p, .card-content h3,
+  .projects-description, .skills-description, .contact-description,
+  .form-group label, .contact-form-section h3, .contact-info-section p,
+  .section-text h3, .section-text p {
+    text-align: center !important;
+  }
+
+  .section-text h3::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .card-content h3::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .contact-form-section h3::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .submit-btn {
+    align-self: center !important;
   }
 }
 
@@ -2164,7 +2202,7 @@ Opciones de Colores para el boton de mas Arriba:
 /* Media queries para responsividad */
 @media (max-width: 768px) {
   .skills-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .skills-welcome::before,
@@ -2447,7 +2485,7 @@ Opciones de Colores para el boton de mas Arriba:
 /* Media queries para responsividad */
 @media (max-width: 768px) {
   .skills-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .skills-welcome::before,
