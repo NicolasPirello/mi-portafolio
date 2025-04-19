@@ -22,8 +22,8 @@ const ProyectCards = ( {proyecto} ) => {
         </div>
         
         <span className="card-link-info-proyects">
-            <a target="_blank" href={proyecto.repositorio}><button className='botonProyect'><span>{proyecto.repoName}</span></button></a>
-            <a target="_blank" href={proyecto.deploy}><button className='botonProyect'><span>{proyecto.deployName}</span></button></a>
+            <a target="_blank" rel="noopener noreferrer" href={proyecto.repositorio}><button className='botonProyect'><span>{proyecto.repoName}</span></button></a>
+            <a target="_blank" rel="noopener noreferrer" href={proyecto.deploy}><button className='botonProyect'><span>{proyecto.deployName}</span></button></a>
         </span>
 
       </div>

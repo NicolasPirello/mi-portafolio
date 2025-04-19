@@ -9,7 +9,7 @@ const TextoDinamico = ({ textos }) => {
         }, 3000);
 
         return () => clearInterval(intervalo);
-    }, []);
+    }, [textos]);
 
     return (
         <div className="wrapper">
