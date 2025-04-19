@@ -179,7 +179,7 @@ const Proyectos = () => {
 
                 <div className="project-section">
                     <p className="projects-description">
-                        Desde mi formación en Digital House y mi experiencia en el sector público, 
+                        Desde mi formación en Digital House y mi experiencia laboral, 
                         he desarrollado diversos proyectos que demuestran mi evolución como desarrollador Full Stack. 
                         Mi trabajo abarca desde aplicaciones web completas hasta soluciones específicas, 
                         siempre enfocado en crear productos de alta calidad y excelente experiencia de usuario.
