@@ -81,10 +81,10 @@ const Home = () => {
                 <div className="homeContainer">
                     <div className="home-text-info">
                         <p className="home-description">
-                            Desarrollador Full Stack en la Subsecretaría de Tecnología e Informática del Ministerio de Justicia 
-                            de la Ciudad Autónoma de Buenos Aires. Me dedico al desarrollo de aplicaciones web, 
+                            Desarrollador Web en la <strong><span className="texto-destacado">Subsecretaría de Tecnología e Informática del Ministerio de Justicia 
+                            de la Ciudad Autónoma de Buenos Aires.</span></strong> Me dedico al desarrollo de aplicaciones web, 
                             combinando tecnologías front-end y back-end. Mi trabajo se centra en crear soluciones 
-                            que contribuyan a mejorar los procesos y servicios del sector público.
+                            que contribuyan a mejorar los procesos y servicios manteniendo la mejor experiencia de usuario.
                         </p>
                     </div>
                 </div>

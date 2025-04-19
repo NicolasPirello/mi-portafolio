@@ -3178,3 +3178,8 @@ Opciones de Colores para el boton de mas Arriba:
     color: #ff4444;
 }
 
+.texto-destacado {
+    color: var(--color-primario);
+    text-shadow: 0 0 10px rgba(8, 253, 216, 0.3);
+}
+
